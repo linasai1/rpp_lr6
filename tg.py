@@ -14,12 +14,11 @@ from aiogram.utils import executor
 load_dotenv()
 
 
-logging.basicConfig(level=logging.INFO)
-bot = Bot(token=bot_token)
-storage = MemoryStorage()
-dp = Dispatcher(bot, storage=storage)
-dp.middleware.setup(LoggingMiddleware())
-# States for adding, deleting and changing the currency exchange rate
+bot = Bot(token='6986979560:AAGGkTPwFXpAfeOGD6sRMzVyBhTygHIHinU')
+dp = Dispatcher()
+router = Router()
+
+
 class AddCurrencyState(StatesGroup):
     waiting_for_currency = State()
     waiting_for_rate =State()
